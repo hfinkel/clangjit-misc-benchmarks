@@ -77,7 +77,8 @@ int main(int argc, char *argv[]) {
   if (argc > 3)
     type = argv[3];
 
-  test_jit(type, size, repeat);
+  for (int i = 0; i < 5; ++i)
+    test_jit(type, size, repeat);
 
   return 0;
 }

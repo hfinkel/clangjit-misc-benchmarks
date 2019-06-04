@@ -56,7 +56,7 @@ void test_aot_i(int size, int repeat) {
 #endif
 
   auto end = chrono::system_clock::now();
-  cout << "JIT: " << std::chrono::duration<double>(end - start).count() << " s\n";
+  cout << "AOT: " << std::chrono::duration<double>(end - start).count() << " s\n";
 }
 
 void test_aot(std::string &type, int size, int repeat) {
@@ -81,7 +81,8 @@ int main(int argc, char *argv[]) {
   if (argc > 3)
     type = argv[3];
 
-  test_aot(type, size, repeat);
+  for (int i = 0; i < 5; ++i)
+    test_aot(type, size, repeat);
 
   return 0;
 }
